@@ -5,6 +5,7 @@ use clap::Parser;
 use clap_derive::Parser;
 use diff::Diff;
 
+
 #[derive(Parser)]
 struct Args {
     first: String,
@@ -21,4 +22,9 @@ fn main() {
             return;
         }
     };
+
+    let inputs = diff.get_input();
+    println!("First: {}\nSecond: {}\n", inputs.0, inputs.1);
+
+    println!("{diff}");
 }

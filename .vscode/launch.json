@@ -1,0 +1,45 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'diff-tool'",
+			"cargo": {
+				"args": [
+					"build",
+					"--bin=diff-tool",
+					"--package=diff-tool"
+				],
+				"filter": {
+					"name": "diff-tool",
+					"kind": "bin"
+				}
+			},
+			"args": ["--", "res/file1.txt", "res/file2.txt"],
+			"cwd": "${workspaceFolder}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug unit tests in executable 'diff-tool'",
+			"cargo": {
+				"args": [
+					"test",
+					"--no-run",
+					"--bin=diff-tool",
+					"--package=diff-tool"
+				],
+				"filter": {
+					"name": "diff-tool",
+					"kind": "bin"
+				}
+			},
+			"args": [],
+			"cwd": "${workspaceFolder}"
+		}
+	]
+}

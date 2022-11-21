@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 clap = "4.0.26"
 clap_derive = "4.0.21"
+colored = "2.0.0"
